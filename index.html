@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayond - Next Generation Executor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <div class="logo-loader">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay-1"></div>
+                <div class="pulse-ring delay-2"></div>
+                <h1 class="loader-text">BAYOND</h1>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Initializing Executor...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Bayond Logo" class="logo-img">
+                <span class="logo-text">BAYOND</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="https://discord.gg/bayond" target="_blank" class="nav-link discord-link">
+                    <i class="fab fa-discord"></i> Discord
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <canvas id="particles"></canvas>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Next-Gen Executor</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Welcome to</span>
+                <span class="title-main gradient-text">BAYOND</span>
+            </h1>
+            <p class="hero-subtitle">
+                Experience the most powerful and reliable script executor with cutting-edge technology
+            </p>
+            <div class="hero-buttons">
+                <a href="https://discord.gg/bayond" target="_blank" class="btn btn-primary">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <span>Learn More</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" data-count="50000">0</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="stat-info">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Secure</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="fas fa-bolt"></i>
+                    <div class="stat-info">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- Menu 3D Section -->
+    <section id="features" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Interface</span>
+                <h2 class="section-title">Intuitive Design</h2>
+                <p class="section-description">Experience our beautifully crafted user interface</p>
+            </div>
+            <div class="menu-3d-container">
+                <div class="menu-3d-wrapper" data-tilt>
+                    <img src="images/Menu.png" alt="Bayond Menu" class="menu-image">
+                    <div class="menu-glow"></div>
+                    <div class="menu-reflection"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-description">Built for performance, designed for excellence</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="feature-title">UNC Support</h3>
+                    <div class="feature-stat">
+                        <span class="stat-large">96</span>
+                        <span class="stat-percent">%</span>
+                    </div>
+                    <p class="feature-description">Industry-leading UNC compatibility for maximum script execution</p>
+                    <div class="feature-progress">
+                        <div class="progress-bar" style="width: 96%"></div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">sUNC Level</h3>
+                    <div class="feature-stat">
+                        <span class="stat-large">81</span>
+                        <span class="stat-percent">%</span>
+                    </div>
+                    <p class="feature-description">Enhanced security UNC for safe and reliable execution</p>
+                    <div class="feature-progress">
+                        <div class="progress-bar" style="width: 81%"></div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3 class="feature-title">Decompiler</h3>
+                    <div class="feature-stat">
+                        <i class="fas fa-check-circle feature-check"></i>
+                    </div>
+                    <p class="feature-description">Advanced decompilation capabilities built right in</p>
+                    <div class="feature-badge">
+                        <span>ENABLED</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features -->
+    <section class="additional-features">
+        <div class="container">
+            <div class="features-list">
+                <div class="feature-item" data-aos="fade-up">
+                    <div class="feature-number">01</div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-rocket"></i> Ultra Fast Execution</h3>
+                        <p>Lightning-fast script execution with optimized performance</p>
+                    </div>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-number">02</div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-lock"></i> Undetected</h3>
+                        <p>Advanced anti-detection technology keeps you safe</p>
+                    </div>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-number">03</div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-magic"></i> Auto-Updates</h3>
+                        <p>Always stay up-to-date with automatic updates</p>
+                    </div>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-number">04</div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-code-branch"></i> Script Hub</h3>
+                        <p>Access thousands of pre-made scripts instantly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-description">Join thousands of users who trust Bayond</p>
+                <a href="https://discord.gg/bayond" target="_blank" class="btn btn-cta">
+                    <i class="fab fa-discord"></i>
+                    <span>Join Our Discord</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Bayond Logo" class="footer-logo">
+                    <h3>BAYOND</h3>
+                    <p>Next-generation script executor</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="https://discord.gg/bayond" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://discord.gg/bayond" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bayond. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
