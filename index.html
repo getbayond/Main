@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bayond - Next Generation Executor</title>
+    <title>BAYOND // EXECUTOR</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Loading Screen -->
+    <!-- Glitch Loading Screen -->
     <div class="loader-wrapper">
-        <div class="loader-content">
-            <div class="logo-loader">
-                <div class="pulse-ring"></div>
-                <div class="pulse-ring delay-1"></div>
-                <div class="pulse-ring delay-2"></div>
-                <h1 class="loader-text">BAYOND</h1>
+        <div class="glitch-container">
+            <div class="glitch-lines"></div>
+            <div class="loader-content">
+                <div class="hexagon-loader">
+                    <div class="hexagon"></div>
+                    <div class="hexagon delay-1"></div>
+                    <div class="hexagon delay-2"></div>
+                    <div class="hexagon delay-3"></div>
+                </div>
+                <h1 class="loader-text glitch" data-text="BAYOND">BAYOND</h1>
+                <div class="loading-bar-advanced">
+                    <div class="loading-progress"></div>
+                    <div class="loading-glow"></div>
+                </div>
+                <div class="loader-stats">
+                    <span class="stat-loading">INITIALIZING KERNEL</span>
+                    <span class="stat-percent">0%</span>
+                </div>
             </div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-            <p class="loading-text">Initializing Executor...</p>
         </div>
     </div>
 
@@ -28,15 +36,22 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="images/logo.png" alt="Bayond Logo" class="logo-img">
-                <span class="logo-text">BAYOND</span>
+                <div class="logo-hexagon">
+                    <img src="images/logo.png" alt="Bayond Logo" class="logo-img">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-text">BAYOND</span>
+                    <span class="logo-version">v2.5.1</span>
+                </div>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="https://discord.gg/bayond" target="_blank" class="nav-link discord-link">
-                    <i class="fab fa-discord"></i> Discord
+                <li><a href="#home" class="nav-link"><span data-text="HOME">HOME</span></a></li>
+                <li><a href="#executor" class="nav-link"><span data-text="EXECUTOR">EXECUTOR</span></a></li>
+                <li><a href="#specs" class="nav-link"><span data-text="SPECS">SPECS</span></a></li>
+                <li><a href="https://discord.gg/bayond" target="_blank" class="nav-link discord-btn">
+                    <i class="fab fa-discord"></i>
+                    <span>DISCORD</span>
+                    <div class="btn-glow"></div>
                 </a></li>
             </ul>
             <div class="hamburger">
@@ -47,225 +62,409 @@
         </div>
     </nav>
 
+    <!-- Matrix Background -->
+    <div class="matrix-bg">
+        <canvas id="matrix"></canvas>
+    </div>
+
     <!-- Animated Background -->
     <div class="animated-bg">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
+        <div class="scan-line"></div>
+        <div class="grid-overlay"></div>
         <canvas id="particles"></canvas>
+        <div class="vignette"></div>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-glitch-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span>Next-Gen Executor</span>
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-path">C:\BAYOND\EXECUTOR></span>
             </div>
             <h1 class="hero-title">
-                <span class="title-line">Welcome to</span>
-                <span class="title-main gradient-text">BAYOND</span>
+                <div class="title-container">
+                    <span class="title-bracket">[</span>
+                    <span class="title-main glitch" data-text="BAYOND">BAYOND</span>
+                    <span class="title-bracket">]</span>
+                </div>
+                <div class="title-subtitle">
+                    <span class="typing-text">ADVANCED SCRIPT EXECUTION ENGINE</span>
+                    <span class="cursor-blink">_</span>
+                </div>
             </h1>
-            <p class="hero-subtitle">
-                Experience the most powerful and reliable script executor with cutting-edge technology
-            </p>
-            <div class="hero-buttons">
-                <a href="https://discord.gg/bayond" target="_blank" class="btn btn-primary">
-                    <span>Get Started</span>
-                    <i class="fas fa-arrow-right"></i>
+            <div class="hero-grid-data">
+                <div class="data-cell" data-aos="zoom-in">
+                    <div class="data-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="data-value" data-count="96">0</div>
+                    <div class="data-label">UNC FUNCTIONS</div>
+                    <div class="data-bar"><div class="bar-fill" style="width: 96%"></div></div>
+                </div>
+                <div class="data-cell" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="data-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="data-value" data-count="81">0</div>
+                    <div class="data-label">sUNC COVERAGE</div>
+                    <div class="data-bar"><div class="bar-fill" style="width: 81%"></div></div>
+                </div>
+                <div class="data-cell active" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="data-icon"><i class="fas fa-code"></i></div>
+                    <div class="data-value">∞</div>
+                    <div class="data-label">DECOMPILER</div>
+                    <div class="status-active">ACTIVE</div>
+                </div>
+                <div class="data-cell" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="data-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="data-value"><1</div>
+                    <div class="data-label">MS INJECTION</div>
+                    <div class="data-bar"><div class="bar-fill pulse" style="width: 100%"></div></div>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="https://discord.gg/bayond" target="_blank" class="cyber-btn primary">
+                    <span class="btn-content">
+                        <i class="fab fa-discord"></i>
+                        JOIN DISCORD
+                    </span>
+                    <div class="btn-borders">
+                        <div class="border-top"></div>
+                        <div class="border-right"></div>
+                        <div class="border-bottom"></div>
+                        <div class="border-left"></div>
+                    </div>
                 </a>
-                <a href="#features" class="btn btn-secondary">
-                    <span>Learn More</span>
-                    <i class="fas fa-chevron-down"></i>
+                <a href="#executor" class="cyber-btn secondary">
+                    <span class="btn-content">
+                        <i class="fas fa-terminal"></i>
+                        VIEW EXECUTOR
+                    </span>
+                    <div class="btn-borders">
+                        <div class="border-top"></div>
+                        <div class="border-right"></div>
+                        <div class="border-bottom"></div>
+                        <div class="border-left"></div>
+                    </div>
                 </a>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <div class="stat-info">
-                        <span class="stat-number" data-count="50000">0</span>
-                        <span class="stat-label">Active Users</span>
-                    </div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="stat-info">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Secure</span>
-                    </div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <i class="fas fa-bolt"></i>
-                    <div class="stat-info">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support</span>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
+        <div class="scroll-indicator-cyber">
+            <div class="scroll-icon">
+                <div class="scroll-arrow"></div>
+                <div class="scroll-arrow"></div>
+                <div class="scroll-arrow"></div>
             </div>
-            <p>Scroll Down</p>
+            <span>SCROLL</span>
         </div>
     </section>
 
-    <!-- Menu 3D Section -->
-    <section id="features" class="menu-section">
+    <!-- Executor Interface Section -->
+    <section id="executor" class="executor-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Interface</span>
-                <h2 class="section-title">Intuitive Design</h2>
-                <p class="section-description">Experience our beautifully crafted user interface</p>
+            <div class="section-header-cyber">
+                <div class="header-line"></div>
+                <h2 class="section-title-cyber">
+                    <span class="title-glitch" data-text="EXECUTOR INTERFACE">EXECUTOR INTERFACE</span>
+                </h2>
+                <div class="header-line"></div>
             </div>
-            <div class="menu-3d-container">
-                <div class="menu-3d-wrapper" data-tilt>
-                    <img src="images/Menu.png" alt="Bayond Menu" class="menu-image">
-                    <div class="menu-glow"></div>
-                    <div class="menu-reflection"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Capabilities</span>
-                <h2 class="section-title">Powerful Features</h2>
-                <p class="section-description">Built for performance, designed for excellence</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
+            <div class="executor-showcase">
+                <div class="executor-frame" data-tilt>
+                    <div class="frame-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
                     </div>
-                    <h3 class="feature-title">UNC Support</h3>
-                    <div class="feature-stat">
-                        <span class="stat-large">96</span>
-                        <span class="stat-percent">%</span>
+                    <div class="executor-glow-wrap">
+                        <img src="images/Menu.png" alt="Bayond Executor Interface" class="executor-image">
+                        <div class="executor-scanline"></div>
                     </div>
-                    <p class="feature-description">Industry-leading UNC compatibility for maximum script execution</p>
-                    <div class="feature-progress">
-                        <div class="progress-bar" style="width: 96%"></div>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="feature-title">sUNC Level</h3>
-                    <div class="feature-stat">
-                        <span class="stat-large">81</span>
-                        <span class="stat-percent">%</span>
-                    </div>
-                    <p class="feature-description">Enhanced security UNC for safe and reliable execution</p>
-                    <div class="feature-progress">
-                        <div class="progress-bar" style="width: 81%"></div>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-code"></i>
-                    </div>
-                    <h3 class="feature-title">Decompiler</h3>
-                    <div class="feature-stat">
-                        <i class="fas fa-check-circle feature-check"></i>
-                    </div>
-                    <p class="feature-description">Advanced decompilation capabilities built right in</p>
-                    <div class="feature-badge">
-                        <span>ENABLED</span>
+                    <div class="frame-stats">
+                        <span><i class="fas fa-circle pulse-dot"></i> ONLINE</span>
+                        <span>LATENCY: 12ms</span>
+                        <span>KERNEL: READY</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Additional Features -->
-    <section class="additional-features">
+    <!-- Technical Specs -->
+    <section id="specs" class="specs-section">
         <div class="container">
-            <div class="features-list">
-                <div class="feature-item" data-aos="fade-up">
-                    <div class="feature-number">01</div>
-                    <div class="feature-content">
-                        <h3><i class="fas fa-rocket"></i> Ultra Fast Execution</h3>
-                        <p>Lightning-fast script execution with optimized performance</p>
+            <div class="section-header-cyber">
+                <div class="header-line"></div>
+                <h2 class="section-title-cyber">
+                    <span class="title-glitch" data-text="TECHNICAL SPECIFICATIONS">TECHNICAL SPECIFICATIONS</span>
+                </h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <!-- Main Spec Cards -->
+            <div class="specs-grid">
+                <div class="spec-card" data-aos="fade-up">
+                    <div class="spec-header">
+                        <div class="spec-icon-hex">
+                            <i class="fas fa-function"></i>
+                        </div>
+                        <div class="spec-title-group">
+                            <h3>UNC COMPATIBILITY</h3>
+                            <span class="spec-badge">LEVEL 96</span>
+                        </div>
+                    </div>
+                    <div class="spec-content">
+                        <div class="spec-stat-large">
+                            <span class="stat-num">96</span>
+                            <span class="stat-symbol">%</span>
+                        </div>
+                        <p class="spec-description">
+                            Supports 96% of Unified Naming Convention functions. Execute complex scripts with access to game manipulation, environment control, and advanced Lua capabilities. Full compatibility with drawing libraries, filesystem operations, and WebSocket connections.
+                        </p>
+                        <div class="spec-features">
+                            <div class="feature-tag"><i class="fas fa-check"></i> Drawing API</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Filesystem Access</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Input Simulation</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> WebSocket Support</div>
+                        </div>
+                        <div class="spec-progress-wrap">
+                            <div class="spec-progress">
+                                <div class="spec-progress-bar" data-width="96"></div>
+                            </div>
+                            <span class="progress-label">96/100 Functions</span>
+                        </div>
                     </div>
                 </div>
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-number">02</div>
-                    <div class="feature-content">
-                        <h3><i class="fas fa-lock"></i> Undetected</h3>
-                        <p>Advanced anti-detection technology keeps you safe</p>
+
+                <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="spec-header">
+                        <div class="spec-icon-hex">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="spec-title-group">
+                            <h3>sUNC SECURITY</h3>
+                            <span class="spec-badge">LEVEL 81</span>
+                        </div>
+                    </div>
+                    <div class="spec-content">
+                        <div class="spec-stat-large">
+                            <span class="stat-num">81</span>
+                            <span class="stat-symbol">%</span>
+                        </div>
+                        <p class="spec-description">
+                            Secure UNC at 81% provides enhanced protection against detection. Advanced obfuscation techniques, memory protection, and anti-cheat bypass mechanisms ensure safe script execution while maintaining low detection rates.
+                        </p>
+                        <div class="spec-features">
+                            <div class="feature-tag"><i class="fas fa-check"></i> Memory Protection</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Code Obfuscation</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> AC Bypass</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Encrypted Channel</div>
+                        </div>
+                        <div class="spec-progress-wrap">
+                            <div class="spec-progress">
+                                <div class="spec-progress-bar secure" data-width="81"></div>
+                            </div>
+                            <span class="progress-label">81/100 Security Points</span>
+                        </div>
                     </div>
                 </div>
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-number">03</div>
-                    <div class="feature-content">
-                        <h3><i class="fas fa-magic"></i> Auto-Updates</h3>
-                        <p>Always stay up-to-date with automatic updates</p>
+
+                <div class="spec-card active" data-aos="fade-up" data-aos-delay="200">
+                    <div class="spec-header">
+                        <div class="spec-icon-hex">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="spec-title-group">
+                            <h3>DECOMPILER</h3>
+                            <span class="spec-badge enabled">ENABLED</span>
+                        </div>
+                    </div>
+                    <div class="spec-content">
+                        <div class="spec-stat-large">
+                            <i class="fas fa-infinity stat-infinity"></i>
+                        </div>
+                        <p class="spec-description">
+                            Built-in Luau decompiler converts bytecode back to readable source code. Analyze scripts, understand game mechanics, and reverse-engineer protected Lua modules. Supports both Roblox Luau and standard Lua bytecode formats.
+                        </p>
+                        <div class="spec-features">
+                            <div class="feature-tag"><i class="fas fa-check"></i> Luau Bytecode</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Module Analysis</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Syntax Highlighting</div>
+                            <div class="feature-tag"><i class="fas fa-check"></i> Export Function</div>
+                        </div>
+                        <div class="status-indicator">
+                            <div class="status-pulse"></div>
+                            <span>FULLY OPERATIONAL</span>
+                        </div>
                     </div>
                 </div>
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-number">04</div>
-                    <div class="feature-content">
-                        <h3><i class="fas fa-code-branch"></i> Script Hub</h3>
-                        <p>Access thousands of pre-made scripts instantly</p>
-                    </div>
+            </div>
+
+            <!-- Additional Features Grid -->
+            <div class="features-matrix">
+                <div class="matrix-card" data-aos="flip-left">
+                    <div class="matrix-icon"><i class="fas fa-rocket"></i></div>
+                    <h4>SUB-MILLISECOND INJECTION</h4>
+                    <p>Lightning-fast DLL injection under 1ms. Optimized kernel-mode driver ensures instant script execution with minimal overhead.</p>
+                    <div class="matrix-metric">&lt;1ms</div>
+                </div>
+                <div class="matrix-card" data-aos="flip-left" data-aos-delay="50">
+                    <div class="matrix-icon"><i class="fas fa-eye-slash"></i></div>
+                    <h4>ANTI-DETECTION</h4>
+                    <p>Advanced stealth technology bypasses memory scanners, integrity checks, and behavioral analysis systems used by modern anti-cheats.</p>
+                    <div class="matrix-metric">UNDETECTED</div>
+                </div>
+                <div class="matrix-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="matrix-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h4>AUTO-UPDATE SYSTEM</h4>
+                    <p>Automatic updates push critical patches and new features instantly. Always stay compatible with the latest game versions.</p>
+                    <div class="matrix-metric">24/7</div>
+                </div>
+                <div class="matrix-card" data-aos="flip-left" data-aos-delay="150">
+                    <div class="matrix-icon"><i class="fas fa-database"></i></div>
+                    <h4>SCRIPT HUB</h4>
+                    <p>Access 10,000+ pre-loaded scripts. Built-in script library with automatic updates, ratings, and malware scanning for safe execution.</p>
+                    <div class="matrix-metric">10K+</div>
+                </div>
+                <div class="matrix-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="matrix-icon"><i class="fas fa-code-branch"></i></div>
+                    <h4>MULTI-INSTANCE</h4>
+                    <p>Run multiple executor instances simultaneously. Perfect for managing multiple accounts or testing scripts across different environments.</p>
+                    <div class="matrix-metric">UNLIMITED</div>
+                </div>
+                <div class="matrix-card" data-aos="flip-left" data-aos-delay="250">
+                    <div class="matrix-icon"><i class="fas fa-cube"></i></div>
+                    <h4>CUSTOM LUA VM</h4>
+                    <p>Proprietary Lua virtual machine with extended capabilities. Enhanced performance, custom libraries, and full Luau compatibility.</p>
+                    <div class="matrix-metric">OPTIMIZED</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section-cyber">
+        <div class="cta-glitch-bg"></div>
         <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Get Started?</h2>
-                <p class="cta-description">Join thousands of users who trust Bayond</p>
-                <a href="https://discord.gg/bayond" target="_blank" class="btn btn-cta">
-                    <i class="fab fa-discord"></i>
-                    <span>Join Our Discord</span>
-                </a>
+            <div class="cta-terminal">
+                <div class="terminal-window">
+                    <div class="terminal-top-bar">
+                        <div class="terminal-buttons">
+                            <span class="tb-dot red"></span>
+                            <span class="tb-dot yellow"></span>
+                            <span class="tb-dot green"></span>
+                        </div>
+                        <span class="terminal-title">BAYOND_EXECUTOR.exe</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">root@bayond:~$</span>
+                            <span class="command typed-text">JOIN OUR COMMUNITY</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p>> Initializing Discord connection...</p>
+                            <p>> 50,000+ active members</p>
+                            <p>> 24/7 support & updates</p>
+                            <p>> Exclusive scripts & tools</p>
+                            <p class="success">> Ready to connect!</p>
+                        </div>
+                        <div class="terminal-cta">
+                            <a href="https://discord.gg/bayond" target="_blank" class="terminal-button">
+                                <span class="tb-icon"><i class="fab fa-discord"></i></span>
+                                <span class="tb-text">JOIN DISCORD SERVER</span>
+                                <span class="tb-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-cyber">
+        <div class="footer-grid-bg"></div>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="images/logo.png" alt="Bayond Logo" class="footer-logo">
-                    <h3>BAYOND</h3>
-                    <p>Next-generation script executor</p>
+                <div class="footer-section">
+                    <div class="footer-logo-area">
+                        <div class="footer-logo-hex">
+                            <img src="images/logo.png" alt="Bayond" class="footer-logo-img">
+                        </div>
+                        <div class="footer-brand-info">
+                            <h3 class="footer-brand-name">BAYOND</h3>
+                            <p class="footer-brand-tag">EXECUTOR v2.5.1</p>
+                            <p class="footer-description">Advanced script execution engine with industry-leading performance and security.</p>
+                        </div>
+                    </div>
+                    <div class="footer-stats-mini">
+                        <div class="fstat">
+                            <div class="fstat-value">96%</div>
+                            <div class="fstat-label">UNC</div>
+                        </div>
+                        <div class="fstat">
+                            <div class="fstat-value">81%</div>
+                            <div class="fstat-label">sUNC</div>
+                        </div>
+                        <div class="fstat">
+                            <div class="fstat-value"><i class="fas fa-check"></i></div>
+                            <div class="fstat-label">DECOMPILER</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="https://discord.gg/bayond" target="_blank">Discord</a></li>
+                <div class="footer-section">
+                    <h4 class="footer-heading">NAVIGATION</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><span>></span> Home</a></li>
+                        <li><a href="#executor"><span>></span> Executor</a></li>
+                        <li><a href="#specs"><span>></span> Specifications</a></li>
+                        <li><a href="https://discord.gg/bayond"><span>></span> Discord</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Connect With Us</h4>
-                    <div class="social-icons">
-                        <a href="https://discord.gg/bayond" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                <div class="footer-section">
+                    <h4 class="footer-heading">RESOURCES</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><span>></span> Documentation</a></li>
+                        <li><a href="#"><span>></span> API Reference</a></li>
+                        <li><a href="#"><span>></span> Script Library</a></li>
+                        <li><a href="#"><span>></span> Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">CONNECT</h4>
+                    <div class="footer-social-grid">
+                        <a href="https://discord.gg/bayond" class="social-hex" target="_blank">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-hex">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-hex">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-hex">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="footer-status">
+                        <div class="status-dot pulse-dot-green"></div>
+                        <span>ALL SYSTEMS OPERATIONAL</span>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Bayond. All rights reserved.</p>
+                <div class="footer-line"></div>
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">© 2024 BAYOND EXECUTOR. ALL RIGHTS RESERVED.</p>
+                    <div class="footer-legal">
+                        <a href="#">TERMS</a>
+                        <span>|</span>
+                        <a href="#">PRIVACY</a>
+                        <span>|</span>
+                        <a href="#">LICENSE</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
