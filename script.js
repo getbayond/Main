@@ -452,5 +452,3 @@ typingElements.forEach(element => {
         typeWriter();
     }, 1000);
 });
-
-console.log('%c⚡ All systems operational', 'color: #27c93f; font-size: 12px;');
